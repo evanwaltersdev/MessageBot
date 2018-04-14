@@ -1,7 +1,7 @@
 # MessageBot by Infinite
 
 import discord
-from .utils import checks
+import checks
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
@@ -66,4 +66,4 @@ async def eval(self, ctx, *, code : str):
         await self.bot.say(python.format(result))
     
 
-bot.run("pickle") # TOKEN
+bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbObSA.Xl2JiO_GgXXPT8OmcLcKsf") # TOKEN
