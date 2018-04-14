@@ -25,4 +25,4 @@ async def msg(ctx, channel : discord.Channel, *, content): # Converts a regular 
     await bot.send_message(channel, content.replace("`", "")) # This sends the message but removes ` that is used for code. This is so if you use the bot for announcemnts you can `@everyone` and the bot mentions @everyone to avoid double ping
 
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbKHjw.CNeItf6kNl95a7HcsGHa_1GNuPc") # TOKEN
+bot.run("pickle") # TOKEN
