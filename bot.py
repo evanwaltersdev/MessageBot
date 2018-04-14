@@ -1,10 +1,14 @@
 # MessageBot by Infinite
 
 import discord
-import re
+from .utils import checks
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
+
+# to expose to the eval command
+import datetime
+from collections import Counter
 
 bot = commands.Bot(command_prefix= '~')
 
@@ -33,8 +37,8 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
 
 #eval
 @commands.command(pass_context=True, hidden=True)
-    @checks.is_owner()
-    async def eval(self, ctx, *, code : str):
+@checks.is_owner()
+async def eval(self, ctx, *, code : str):
         """Evaluates code."""
         code = code.strip('` ')
         python = '```py\n{}\n```'
@@ -62,4 +66,4 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
         await self.bot.say(python.format(result))
     
 
-bot.run("cucumber") # TOKEN
+bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbNgDw.utfqUPV4Non6Te3r_EVc2uQuDqQ") # TOKEN
