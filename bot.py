@@ -1,21 +1,33 @@
 # MessageBot by Infinite
 
 import discord
-import checks
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-# to expose to the eval command
-import datetime
-from collections import Counter
-
 bot = commands.Bot(command_prefix= '~')
+bot.remove_command("help") # Got my own help boi
 
 @bot.event
 async def on_ready():
     print ("Online boi :P") # Indicates that the bot is online
     await bot.change_presence(game=discord.Game(name='wip - eta son')) # Sets the Playing status (Presence) 
+
+#help
+@bot.command(pass_context=True)
+async def help(ctx):
+    embed = discord.Embed(title="help", colour=discord.Colour(0x15a56b), url="https://discordapp.com", description="This bot was made to make annoucements more unified but can also be used for other purposes")
+
+    embed.set_image(url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
+    embed.set_author(name="MessageBot", url="messagebot.evanw.uk", icon_url="https://cdn.discordapp.com/embed/avatars/0.png")
+    embed.set_footer(text="© Evan Walters (Infinite) 2018", icon_url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
+
+    embed.add_field(name="`~msg`", value="Can be used by all users\nEXAMPLE : `~msg #general This is a message`\n OUTPUT (IN GENERAL): `This is a message` ")
+    embed.add_field(name="`~announce`", value="Can be used by admins\nEXAMPLE : `~announce #announcements everyone This is a message`\n OUTPUT (IN ANNOUNCEMENTS): `@everyone This is a message`")
+    embed.add_field(name="`~ping`", value=":ping_pong:")
+
+    await bot.say(embed=embed)
 
 # Ping Command
 @bot.command(pass_context=True)
@@ -35,35 +47,7 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
     msg = "{} {}".format(role.mention, content.replace("`", ""))
     await bot.send_message(channel, msg)
 
-#eval
-@commands.command(pass_context=True, hidden=True)
-@checks.is_owner()
-async def eval(self, ctx, *, code : str):
-        """Evaluates code."""
-        code = code.strip('` ')
-        python = '```py\n{}\n```'
-        result = None
 
-        env = {
-            'bot': self.bot,
-            'ctx': ctx,
-            'message': ctx.message,
-            'server': ctx.message.server,
-            'channel': ctx.message.channel,
-            'author': ctx.message.author
-        }
-
-        env.update(globals())
-
-        try:
-            result = eval(code, env)
-            if inspect.isawaitable(result):
-                result = await result
-        except Exception as e:
-            await self.bot.say(python.format(type(e).__name__ + ': ' + str(e)))
-            return
-
-        await self.bot.say(python.format(result))
     
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbObSA.Xl2JiO_GgXXPT8OmcLcKsf") # TOKEN
+bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbP7kw.Vk6L7TPNNN8rGa8jqtQeUfTl08") # TOKEN
