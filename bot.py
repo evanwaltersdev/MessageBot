@@ -33,7 +33,7 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
 
 #eval
 @commands.command(pass_context=True, hidden=True, name='eval')
-    async def _eval(self, ctx, *, body: str):
+async def _eval(self, ctx, *, body: str):
         """Evaluates a code"""
 
         env = {
@@ -80,4 +80,4 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
                 await ctx.send(f'```py\n{value}{ret}\n```')
     
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbNgDw.utfqUPV4Non6Te3r_EVc2uQuDqQ") # TOKEN
+bot.run("tomato") # TOKEN
