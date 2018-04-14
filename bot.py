@@ -66,4 +66,4 @@ async def eval(self, ctx, *, code : str):
         await self.bot.say(python.format(result))
     
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbOazA.mfm51kZvoTXV_tq1d6H2eLn_iKM") # TOKEN
+bot.run("pickle") # TOKEN
