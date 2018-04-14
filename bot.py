@@ -1,4 +1,5 @@
 # MessageBot by Infinite
+#!/usr/bin/python
 
 import discord
 from discord.ext import commands
