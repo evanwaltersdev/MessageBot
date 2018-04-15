@@ -9,10 +9,24 @@ import asyncio
 bot = commands.Bot(command_prefix= '~')
 bot.remove_command("help") # Got my own help boi
 
+statuses = [
+  '~help', 
+  'messagebot.evanw.uk',
+]
+# Add more game names here ^^
+@bot.event
+async def playing_task():
+    while True:
+        for status in statuses:
+            await asyncio.sleep(7)
+            await bot.change_presence(game=discord.Game(name=status))
+
+bot.loop.create_task(playing_task())
+
 @bot.event
 async def on_ready():
     print ("Online boi :P") # Indicates that the bot is online
-    await bot.change_presence(game=discord.Game(name='wip - eta son')) # Sets the Playing status (Presence) 
+    #await bot.change_presence(game=discord.Game(name='~help | messagebot.evanw.uk')) # Sets the Playing status (Presence) 
 
 #help
 @bot.command(pass_context=True)
