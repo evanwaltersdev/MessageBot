@@ -51,4 +51,8 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
 
     
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbSMHg.QgBZ5KN7IWw3H5inYUOprtw") # TOKEN
+with open("token.txt") as f:
+    token = f.read()
+# now use token
+
+bot.run(token)  
