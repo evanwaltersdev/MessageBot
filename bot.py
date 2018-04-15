@@ -17,11 +17,11 @@ async def on_ready():
 #help
 @bot.command(pass_context=True)
 async def help(ctx):
-    embed = discord.Embed(title="help", colour=discord.Colour(0x15a56b), url="https://discordapp.com", description="This bot was made to make annoucements more unified but can also be used for other purposes")
+    embed = discord.Embed(title="help", colour=discord.Colour(0x15a56b), url="https://messagebot.evanw.uk", description="This bot was made to make annoucements more unified but can also be used for other purposes")
 
     embed.set_image(url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
     embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
-    embed.set_author(name="MessageBot", url="messagebot.evanw.uk", icon_url="https://cdn.discordapp.com/embed/avatars/0.png")
+    embed.set_author(name="MessageBot", url="https://messagebot.evanw.uk", icon_url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
     embed.set_footer(text="© Evan Walters (Infinite) 2018", icon_url="https://cdn.discordapp.com/avatars/434292138323476481/924aa0d98f2b6a9f6169c9975b8b5f17.png")
 
     embed.add_field(name="`~msg`", value="Can be used by all users\nEXAMPLE : `~msg #general This is a message`\n OUTPUT (IN GENERAL): `This is a message` ")
@@ -51,4 +51,4 @@ async def announce(ctx, channel : discord.Channel, role : discord.Role, *, conte
 
     
 
-bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbP7kw.Vk6L7TPNNN8rGa8jqtQeUfTl08") # TOKEN
+bot.run("NDM0MjkyMTM4MzIzNDc2NDgx.DbSMHg.QgBZ5KN7IWw3H5inYUOprtw") # TOKEN
