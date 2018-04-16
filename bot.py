@@ -11,7 +11,7 @@ bot.remove_command("help") # Got my own help boi
 
 statuses = [
   '~help', 
-  'messagebot.evanw.uk',
+  'bots.evanw.uk',
 ]
 # Add more game names here ^^
 @bot.event
